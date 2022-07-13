@@ -1,3 +1,5 @@
+// ignore_for_file: use_key_in_widget_constructors, library_private_types_in_public_api
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
@@ -5,14 +7,20 @@ import 'page_phone_auth.dart';
 
 class HomePage extends StatefulWidget {
   @override
-  _HomePageState createState() => _HomePageState();
+  _HomePageState createState() =>
+      _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
-  _signOut() async {
-    await FirebaseAuth.instance.signOut();
+  _signOut()  {
     Navigator.pushReplacement(
-        context, MaterialPageRoute(builder: (context) => PhoneAuthPage()));
+        context,
+        MaterialPageRoute(
+            builder: (context) =>
+                PhoneAuthPage()));
+               
+   
+    
   }
 
   @override
@@ -21,8 +29,10 @@ class _HomePageState extends State<HomePage> {
         child: Scaffold(
       body: Center(
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment:
+              CrossAxisAlignment.center,
+          mainAxisAlignment:
+              MainAxisAlignment.center,
           children: [
             Image.asset(
               'assets/logo_radius.png',
@@ -34,7 +44,9 @@ class _HomePageState extends State<HomePage> {
             ),
             const Text(
               "Flutter Firebase Phone Auth",
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22.0),
+              style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 22.0),
             ),
             const SizedBox(
               height: 30.0,
@@ -47,7 +59,11 @@ class _HomePageState extends State<HomePage> {
               height: 40.0,
             ),
             ElevatedButton(
-                onPressed: () => _signOut, child: const Text("Sign Out"))
+                onPressed: () async{
+                 await FirebaseAuth.instance.signOut();
+                  _signOut();
+                },
+                child: const Text("Sign Out"))
           ],
         ),
       ),
