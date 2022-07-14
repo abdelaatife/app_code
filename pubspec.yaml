@@ -41,6 +41,8 @@ dependencies:
   fluttertoast: ^8.0.9
   pin_entry_text_field: ^0.1.4
   cloud_firestore: ^3.2.1
+  line_icons: ^2.0.1
+  ionicons: ^0.1.2
 
 
 dev_dependencies:

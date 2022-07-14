@@ -1,9 +1,9 @@
-import 'package:app/page_home.dart';
+import 'package:app/screens/page_home.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
-import 'page_phone_auth.dart';
+import 'screens/page_phone_auth.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
