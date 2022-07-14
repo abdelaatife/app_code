@@ -1,6 +1,6 @@
 // ignore_for_file: prefer_final_fields, use_key_in_widget_constructors, library_private_types_in_public_api, unnecessary_this, use_build_context_synchronously
 
-import 'package:app/page_home.dart';
+import 'package:app/screens/page_home.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -72,6 +72,7 @@ class _PhoneAuthPageState
                   verificationId;
             });
           },
+        
           // timeout.
           codeAutoRetrievalTimeout:
               (verificationId) async {});
@@ -353,7 +354,7 @@ class _PhoneAuthPageState
                         TextStyle(fontSize: 16),
                   ),
 
-                  textColor: Colors.white,
+                  textColor: Color.fromARGB(255, 0, 0, 0),
                 ),
               ),
             ],
